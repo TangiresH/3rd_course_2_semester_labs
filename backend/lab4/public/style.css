@@ -1,0 +1,67 @@
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  color: #0b0205;
+}
+h2 {
+  color: #0b0205;
+}
+.subheader {
+  font-size: 20px;
+}
+#container {
+  margin-top: 100px;
+}
+#col {
+  padding: 0 30px 0px 30px;
+  height: 600px;
+}
+.col-8 {
+  border-right: 1px solid #0d6efd;
+}
+.cities {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+button {
+  width: 300px;
+  margin-bottom: 10px;
+}
+#citys {
+  justify-content: center;
+}
+#citys:first-child {
+  margin-top: 50px;
+}
+form {
+  text-align: left;
+  margin-top: 30px;
+}
+#btn {
+  width: 150px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid grey;
+  transition: 0.3s ease-in-out;
+}
+#temperature {
+  position: absolute;
+  right: 40px;
+  top: 10px;
+  font-size: 80px;
+  color: #0b0205;
+}
+#weather {
+  font-size: 20px;
+  font-weight: thin;
+  color: #0b0205;
+}
+p {
+  color: #0b0205;
+  font-size: 16px;
+}
+a {
+  color: #0b0205;
+  text-decoration: none;
+}
