@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 import Menu from './components/Menu/Menu';
+import Services from './components/Services/Services';
 
 function App() {
   return (
     <div className="App">
       <Menu />
+      <Services />
       <section id="home">
         <h1>Меблі</h1>
         <p>Це основний розділ про меблі.</p>
@@ -29,10 +31,6 @@ function App() {
       <section id="about">
         <h2>Акції</h2>
         <p>Інформація про акції.</p>
-      </section>
-      <section id="services">
-        <h2>Про нас</h2>
-        <p>Інформація про нас.</p>
       </section>
       <section id="contact">
         <h2>Контактна інформація</h2>

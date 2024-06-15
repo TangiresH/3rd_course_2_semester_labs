@@ -1,0 +1,23 @@
+.services-container {
+    display: flex;
+    justify-content: space-between; /* Розміщення елементів по краях контейнера */
+    align-items: center; /* Вирівнювання елементів по вертикалі по центру */
+  }
+  
+  .service {
+    display: flex;
+    width: 100%; /* Ширина контейнера */
+  }
+  
+  .service-text {
+    flex: 1; /* Розширюємо текстовий блок, щоб зайняв доступний вільний простір */
+    padding-right: 20px; /* Відступ справа між текстом і зображенням */
+    word-wrap: break-word;
+    text-align: left;
+  }
+  
+  .service-image {
+    flex: 1; /* Розширюємо блок зображення, щоб зайняв доступний вільний простір */
+    text-align: right; /* Вирівнюємо зображення по правому краю */
+  }
+  
