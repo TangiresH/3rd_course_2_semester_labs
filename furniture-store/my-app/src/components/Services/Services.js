@@ -3,7 +3,7 @@ import './Services.css';
 
 const Services = () => {
   return (
-    <section id="services">
+    <section id="services" className="page-section">
         <h2>Меблі, що надихають: створіть дім своєї мрії разом з нами</h2>
 
         <div className='service-description'>

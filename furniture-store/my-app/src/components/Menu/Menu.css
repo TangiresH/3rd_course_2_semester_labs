@@ -33,12 +33,15 @@
     padding-right: 20px;
     padding-bottom: 10px;
     background-color: #DCE1DD;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, padding-left 0.5s ease, padding-right 0.5s ease;
 }
 
 .menu-item:hover {
     background-color: #E3DBC8;
-  }
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
   
   .menu-item a {
     text-decoration: none;
@@ -51,9 +54,10 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    padding-left: 20px;
+    display: none;
+    position: absolute; 
+    left: auto;
+    top: 100%;
   }
   
   .submenu-list.open {
@@ -89,10 +93,14 @@
       background: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       display: none;
+      padding-left: 25px;
+      padding-right: 25px;
     }
   
     .menu-item:hover .submenu-list {
-      display: block;
+        display: flex;
+        flex-direction: column; /* Відображаємо підменю як колонку */
+      
     }
   }
   

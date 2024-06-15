@@ -3,7 +3,7 @@
   min-height: 100vh;
 }
 
-section {
+.page-section {
   padding: 20px;
   padding-bottom: 0%;
   margin: 120px 0;
