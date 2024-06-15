@@ -1,23 +1,23 @@
 .services-container {
     display: flex;
-    justify-content: space-between; /* Розміщення елементів по краях контейнера */
-    align-items: center; /* Вирівнювання елементів по вертикалі по центру */
+    justify-content: space-between;
+    align-items: center; 
   }
   
   .service {
     display: flex;
-    width: 100%; /* Ширина контейнера */
+    width: 100%; 
   }
   
   .service-text {
-    flex: 1; /* Розширюємо текстовий блок, щоб зайняв доступний вільний простір */
-    padding-right: 20px; /* Відступ справа між текстом і зображенням */
+    flex: 1; 
+    padding-right: 20px;
     word-wrap: break-word;
     text-align: left;
   }
   
   .service-image {
-    flex: 1; /* Розширюємо блок зображення, щоб зайняв доступний вільний простір */
-    text-align: right; /* Вирівнюємо зображення по правому краю */
+    flex: 1;
+    text-align: right;
   }
   
