@@ -3,6 +3,8 @@ import './App.css';
 import Menu from './components/Menu/Menu';
 import Services from './components/Services/Services';
 import SearchBar from './components/Search/Search';
+import FurnitureStore from './components/StoreSlider/FurnitureStore';
+
 
 function App() {
   return (
@@ -10,10 +12,7 @@ function App() {
       <Menu />
       <SearchBar />
       <Services />
-      <section id="home" className="page-section">
-        <h1>Меблі</h1>
-        <p>Це основний розділ про меблі.</p>
-      </section>
+      <FurnitureStore />
       <section id="wardrobe" className="page-section">
         <h2>Шафа</h2>
         <p>Інформація про шафи.</p>

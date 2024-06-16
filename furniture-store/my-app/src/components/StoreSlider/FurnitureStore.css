@@ -1,0 +1,97 @@
+.page-section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .page-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .product-slide {
+    display: flex !important;
+    justify-content: center;
+  }
+  
+  .slick-track {
+    display: flex !important;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 350px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .product-info {
+    padding: 15px 0;
+  }
+  
+  .product-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .product-info p {
+    font-size: 16px;
+    color: #777;
+    text-align: center;
+  }
+  
+  .product-price {
+    font-size: 25px;
+    color: #000;
+    margin-top: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #furniture-store .slick-prev,
+  #furniture-store .slick-next {
+    font-size: 24px !important;
+    width: 40px !important;
+    height: 40px !important;
+    line-height: 40px !important;
+    border-radius: 50% !important;
+    background-color: #9c9a9a !important;
+    color: transparent !important;
+    opacity: 0.8;
+  }
+  
+  #furniture-store .slick-prev:hover,
+  #furniture-store .slick-next:hover {
+    background-color: #999 !important;
+    opacity: 1;
+  }
+  
+  #furniture-store .slick-prev {
+    left: -50px !important;
+  }
+  
+  #furniture-store .slick-next {
+    right: -50px !important;
+  }
