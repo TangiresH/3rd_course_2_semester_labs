@@ -22,8 +22,8 @@ const Menu = () => {
         <li className="menu-item">
           <a href="#home" onClick={toggleSubmenu}>Меблі</a>
           <ul className={`submenu-list ${isSubmenuOpen ? 'open' : ''}`}>
-            <li className="submenu-item"><a href="#wardrobe">Шафи</a></li>
-            <li className="submenu-item"><a href="#sofa">Дивани</a></li>
+            <li className="submenu-item"><a href="#furniture-store-wardrobe">Шафи</a></li>
+            <li className="submenu-item"><a href="#furniture-store-sofa">Дивани</a></li>
             <li className="submenu-item"><a href="#chairs">Стільці</a></li>
             <li className="submenu-item"><a href="#table">Столи</a></li>
           </ul>

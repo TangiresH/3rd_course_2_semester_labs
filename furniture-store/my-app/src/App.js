@@ -3,7 +3,8 @@ import './App.css';
 import Menu from './components/Menu/Menu';
 import Services from './components/Services/Services';
 import SearchBar from './components/Search/Search';
-import FurnitureStore from './components/StoreSlider/FurnitureStore';
+import FurnitureStoreSofa from './components/StoreSliderSofa/FurnitureStoreSofa';
+import FurnitureStoreWardrobe from './components/StoreSliderWardrobe/FurnitureStoreWardrobe';
 
 
 function App() {
@@ -12,15 +13,8 @@ function App() {
       <Menu />
       <SearchBar />
       <Services />
-      <FurnitureStore />
-      <section id="wardrobe" className="page-section">
-        <h2>Шафа</h2>
-        <p>Інформація про шафи.</p>
-      </section>
-      <section id="sofa" className="page-section">
-        <h2>Диван</h2>
-        <p>Інформація про дивани.</p>
-      </section>
+      <FurnitureStoreSofa />
+      <FurnitureStoreWardrobe />
       <section id="chairs" className="page-section">
         <h2>Стільці</h2>
         <p>Інформація про стільці.</p>

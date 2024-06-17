@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from 'react-slick';
-import './FurnitureStore.css';
+import './FurnitureStoreSofa.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-const FurnitureStore = () => {
+const FurnitureStoreSofa = () => {
   const products = [
     {
       id: 1,
@@ -63,7 +63,7 @@ const FurnitureStore = () => {
   };
 
   return (
-    <section id="furniture-store" className="page-section">
+    <section id="furniture-store-sofa" className="page-section">
       <h2>Дивани</h2>
       <Slider {...settings}>
         {products.map((product) => (
@@ -86,4 +86,4 @@ const FurnitureStore = () => {
   );
 };
 
-export default FurnitureStore;
+export default FurnitureStoreSofa;
