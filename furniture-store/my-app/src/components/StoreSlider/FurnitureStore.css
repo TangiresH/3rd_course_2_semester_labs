@@ -1,26 +1,26 @@
 .page-section {
     padding: 50px 0;
     text-align: center;
-  }
-  
-  .page-section h2 {
+}
+
+.page-section h2 {
     font-size: 36px;
     margin-bottom: 20px;
     color: #333;
-  }
-  
-  .product-slide {
+}
+
+.product-slide {
     display: flex !important;
     justify-content: center;
-  }
-  
-  .slick-track {
+}
+
+.slick-track {
     display: flex !important;
     justify-content: center;
     gap: 40px;
-  }
-  
-  .product-card {
+}
+
+.product-card {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -33,46 +33,71 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-  
-  .product-card:hover {
+}
+
+.product-card:hover {
     transform: scale(1.05);
-  }
-  
-  .product-image {
+}
+
+.product-image {
     width: 100%;
     height: auto;
     border-radius: 10px;
-  }
-  
-  .product-info {
+}
+
+.product-info {
     padding: 15px 0;
-  }
-  
-  .product-info h3 {
+}
+
+.product-info h3 {
     font-size: 24px;
     margin-bottom: 10px;
     color: #333;
     text-align: center;
-  }
-  
-  .product-info p {
+}
+
+.product-info p {
     font-size: 16px;
     color: #777;
     text-align: center;
-  }
-  
-  .product-price {
-    font-size: 25px;
-    color: #000;
-    margin-top: 30px;
-    font-weight: bold;
-    text-align: center;
-  }
+}
 
-  #furniture-store .slick-prev,
-  #furniture-store .slick-next {
-    font-size: 24px !important;
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.product-footer .product-price {
+    font-size: 28px !important;
+    color: #000;
+    font-weight: bold;
+    text-align: left;
+}
+
+.add-to-cart-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.add-to-cart-button:hover {
+    background-color: #0056b3;
+}
+
+#furniture-store .slick-prev,
+#furniture-store .slick-next {
     width: 40px !important;
     height: 40px !important;
     line-height: 40px !important;
@@ -80,18 +105,18 @@
     background-color: #9c9a9a !important;
     color: transparent !important;
     opacity: 0.8;
-  }
-  
-  #furniture-store .slick-prev:hover,
-  #furniture-store .slick-next:hover {
+}
+
+#furniture-store .slick-prev:hover,
+#furniture-store .slick-next:hover {
     background-color: #999 !important;
     opacity: 1;
-  }
-  
-  #furniture-store .slick-prev {
+}
+
+#furniture-store .slick-prev {
     left: -50px !important;
-  }
-  
-  #furniture-store .slick-next {
+}
+
+#furniture-store .slick-next {
     right: -50px !important;
-  }
+}

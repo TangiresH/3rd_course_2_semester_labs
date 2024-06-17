@@ -73,7 +73,10 @@ const FurnitureStore = () => {
               <div className="product-info">
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
-                <p className="product-price">{product.price}</p>
+                <div className="product-footer">
+                  <p className="product-price">{product.price}</p>
+                  <button className="add-to-cart-button">+</button>
+                </div>
               </div>
             </div>
           </div>
