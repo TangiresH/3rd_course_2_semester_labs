@@ -40,8 +40,8 @@
 }
 
 .product-image {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 225px;
     border-radius: 10px;
 }
 

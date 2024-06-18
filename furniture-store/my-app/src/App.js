@@ -6,6 +6,7 @@ import SearchBar from './components/Search/Search';
 import FurnitureStoreSofa from './components/StoreSliderSofa/FurnitureStoreSofa';
 import FurnitureStoreWardrobe from './components/StoreSliderWardrobe/FurnitureStoreWardrobe';
 import FurnitureStoreChairs from './components/StoreSliderChairs/FurnitureStoreChairs';
+import FurnitureStoreTable from './components/StoreSliderTable/FurnitureStoreTable';
 
 
 function App() {
@@ -17,10 +18,7 @@ function App() {
       <FurnitureStoreSofa />
       <FurnitureStoreWardrobe />
       <FurnitureStoreChairs />
-      <section id="table" className="page-section">
-        <h2>Стіл</h2>
-        <p>Інформація про столи.</p>
-      </section>
+      <FurnitureStoreTable />
       <section id="about" className="page-section">
         <h2>Акції</h2>
         <p>Інформація про акції.</p>
