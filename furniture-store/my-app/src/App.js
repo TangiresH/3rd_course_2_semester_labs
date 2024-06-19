@@ -7,6 +7,8 @@ import FurnitureStoreSofa from './components/StoreSliderSofa/FurnitureStoreSofa'
 import FurnitureStoreWardrobe from './components/StoreSliderWardrobe/FurnitureStoreWardrobe';
 import FurnitureStoreChairs from './components/StoreSliderChairs/FurnitureStoreChairs';
 import FurnitureStoreTable from './components/StoreSliderTable/FurnitureStoreTable';
+import Cart from './components/Cart/Cart';
+import { CartProvider } from './components/CartContext/CartContext';
 
 
 function App() {
@@ -18,7 +20,11 @@ function App() {
       <FurnitureStoreSofa />
       <FurnitureStoreWardrobe />
       <FurnitureStoreChairs />
-      <FurnitureStoreTable />
+      <CartProvider>
+        <FurnitureStoreTable />
+        <Cart />
+      </CartProvider>
+      
       <section id="about" className="page-section">
         <h2>Акції</h2>
         <p>Інформація про акції.</p>

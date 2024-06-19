@@ -1,0 +1,29 @@
+.cart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .cart h2 {
+    margin: 0 0 10px 0;
+  }
+  
+  .cart ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cart li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+  }
+  

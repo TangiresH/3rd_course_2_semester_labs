@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Slider from 'react-slick';
 import './FurnitureStoreTable.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import CartContext from '../CartContext/CartContext';
 
 const FurnitureStoreTable = () => {
+  const { addToCart } = useContext(CartContext);
+
   const products = [
     {
         id: 1,
@@ -89,7 +92,7 @@ const FurnitureStoreTable = () => {
                 <p>{product.description}</p>
                 <div className="product-footer">
                   <p className="product-price">{product.price}</p>
-                  <button className="add-to-cart-button">+</button>
+                  <button className="add-to-cart-button" onClick={() => addToCart(product)}>+</button>
                 </div>
               </div>
             </div>
