@@ -14,10 +14,15 @@
     padding-right: 20px;
     word-wrap: break-word;
     text-align: left;
+    padding-bottom: 30px;
   }
   
   .service-image {
     flex: 1;
     text-align: right;
+  }
+
+  li {
+    padding-bottom: 5px;
   }
   
