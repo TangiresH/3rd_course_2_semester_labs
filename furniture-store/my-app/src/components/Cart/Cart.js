@@ -3,20 +3,16 @@ import CartContext from '../CartContext/CartContext';
 import './Cart.css';
 
 const Cart = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, updateCart } = useContext(CartContext);
   const [isCartVisible, setIsCartVisible] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
   const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
-    let totalCount = cart.reduce((total, item) => total + item.quantity, 0);
-    setCartCount(totalCount);
-
     if (cart.length > 0) {
       setShowNotification(true);
       const timer = setTimeout(() => {
         setShowNotification(false);
-      }, 800);
+      }, 1500);
 
       return () => clearTimeout(timer);
     }
@@ -26,11 +22,27 @@ const Cart = () => {
     setIsCartVisible(!isCartVisible);
   };
 
+  const handleIncreaseQuantity = (index) => {
+    const updatedCart = [...cart];
+    updatedCart[index].quantity += 1;
+    updateCart(updatedCart);
+  };
+
+  const handleDecreaseQuantity = (index) => {
+    const updatedCart = [...cart];
+    if (updatedCart[index].quantity > 1) {
+      updatedCart[index].quantity -= 1;
+    } else {
+      updatedCart.splice(index, 1);
+    }
+    updateCart(updatedCart); 
+  };
+
   return (
     <>
       <button className="cart-button" onClick={toggleCartVisibility}>
         <img src="cart-logo.png" alt="Cart" className="cart-logo" />
-        {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+        {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
       </button>
       {isCartVisible && (
         <div className="cart">
@@ -43,7 +55,11 @@ const Cart = () => {
               <li key={index}>
                 <span>{item.name}</span>
                 <span>{item.price}</span>
-                <span>Кількість: {item.quantity}</span>
+                <span>
+                  Кількість: {item.quantity}{' '}
+                  <button className="quantity-button" onClick={() => handleIncreaseQuantity(index)}>+</button>{' '}
+                  <button className="quantity-button" onClick={() => handleDecreaseQuantity(index)}>-</button>
+                </span>
               </li>
             ))}
           </ul>

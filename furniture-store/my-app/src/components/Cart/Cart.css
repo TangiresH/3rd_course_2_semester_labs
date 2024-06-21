@@ -1,13 +1,14 @@
 .cart {
   position: fixed;
-  top: 80px; /* Adjusted to appear below the button */
+  top: 80px;
   right: 20px;
-  width: 300px;
-  background-color: #fff;
+  width: 800px;
+  background-color: #f4ffe6;
   border: 1px solid #ccc;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  border-radius: 6px;
 }
 
 .cart h2 {
@@ -73,12 +74,12 @@
   padding: 10px 20px;
   border-radius: 5px;
   z-index: 1000;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+  opacity: 0;
+  transition: opacity 0.3s ease; 
 }
 
 .notification.active {
-  opacity: 1; /* Show notification when active class is applied */
+  opacity: 1;
 }
 
 
@@ -90,4 +91,15 @@
   border: none;
   font-size: 20px;
   cursor: pointer;
+}
+
+.quantity-button {
+  background-color: #007bff;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  border-radius: 10px;
+  margin-left: 20px;
+  border: none;
 }
