@@ -8,7 +8,7 @@
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 .cart h2 {
@@ -24,6 +24,7 @@
 .cart li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 5px 0;
   border-bottom: 1px solid #eee;
 }
@@ -69,8 +70,6 @@
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #28a745;
-  color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   z-index: 1000;
@@ -82,6 +81,20 @@
   opacity: 1;
 }
 
+.notification-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.notification-default {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.notification-red {
+  background-color: #dc3545;
+  color: #fff;
+}
 
 .close-button {
   position: absolute;
@@ -89,8 +102,13 @@
   right: 10px;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
 }
 
 .quantity-button {
@@ -102,4 +120,26 @@
   border-radius: 10px;
   margin-left: 20px;
   border: none;
+}
+
+.quantity-button:hover {
+  background-color: #0056b3;
+}
+
+.remove-button {
+  background-color: red;
+  color: #fff;
+  width: 85px;
+  height: 35px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-left: 20px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-button:hover {
+  background-color: #991515;
 }

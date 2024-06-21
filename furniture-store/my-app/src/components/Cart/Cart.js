@@ -3,46 +3,73 @@ import CartContext from '../CartContext/CartContext';
 import './Cart.css';
 
 const Cart = () => {
-  const { cart, updateCart } = useContext(CartContext);
+  const { cart, updateCart, notification, setNotification } = useContext(CartContext);
   const [isCartVisible, setIsCartVisible] = useState(false);
-  const [showNotification, setShowNotification] = useState(false);
 
   useEffect(() => {
-    if (cart.length > 0) {
-      setShowNotification(true);
+    if (notification.show) {
       const timer = setTimeout(() => {
-        setShowNotification(false);
+        setNotification({ show: false, message: '' });
       }, 1500);
 
       return () => clearTimeout(timer);
     }
-  }, [cart]);
+  }, [notification, setNotification]);
 
   const toggleCartVisibility = () => {
     setIsCartVisible(!isCartVisible);
   };
 
-  const handleIncreaseQuantity = (index) => {
+  const handleQuantityChange = (index, type) => {
     const updatedCart = [...cart];
-    updatedCart[index].quantity += 1;
+    let message = '';
+    switch (type) {
+      case 'increase':
+        updatedCart[index].quantity += 1;
+        message = 'Змінено кількість товару!';
+        break;
+      case 'decrease':
+        if (updatedCart[index].quantity > 1) {
+          updatedCart[index].quantity -= 1;
+          message = 'Змінено кількість товару!';
+        } else {
+          updatedCart.splice(index, 1);
+          message = 'Товар видалено з кошика!';
+        }
+        break;
+      case 'remove':
+        updatedCart.splice(index, 1);
+        message = 'Товар видалено з кошика!';
+        break;
+      default:
+        break;
+    }
     updateCart(updatedCart);
+    setNotification({ show: true, message });
   };
 
-  const handleDecreaseQuantity = (index) => {
-    const updatedCart = [...cart];
-    if (updatedCart[index].quantity > 1) {
-      updatedCart[index].quantity -= 1;
-    } else {
-      updatedCart.splice(index, 1);
+  const getTotalItemsCount = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0);
+  };
+
+  const getNotificationClass = (message) => {
+    switch (message) {
+      case 'Товар додано до кошика!':
+        return 'notification-success';
+      case 'Змінено кількість товару!':
+        return 'notification-default';
+      case 'Товар видалено з кошика!':
+        return 'notification-red';
+      default:
+        return 'notification-default';
     }
-    updateCart(updatedCart); 
   };
 
   return (
     <>
       <button className="cart-button" onClick={toggleCartVisibility}>
         <img src="cart-logo.png" alt="Cart" className="cart-logo" />
-        {cart.length > 0 && <span className="cart-count">{cart.length}</span>}
+        {cart.length > 0 && <span className="cart-count">{getTotalItemsCount()}</span>}
       </button>
       {isCartVisible && (
         <div className="cart">
@@ -55,19 +82,20 @@ const Cart = () => {
               <li key={index}>
                 <span>{item.name}</span>
                 <span>{item.price}</span>
-                <span>
+                <span className="quantity-controls">
                   Кількість: {item.quantity}{' '}
-                  <button className="quantity-button" onClick={() => handleIncreaseQuantity(index)}>+</button>{' '}
-                  <button className="quantity-button" onClick={() => handleDecreaseQuantity(index)}>-</button>
+                  <button className="quantity-button" onClick={() => handleQuantityChange(index, 'increase')}>+</button>{' '}
+                  <button className="quantity-button" onClick={() => handleQuantityChange(index, 'decrease')}>-</button>{' '}
+                  <button className="remove-button" onClick={() => handleQuantityChange(index, 'remove')}>Видалити</button>
                 </span>
               </li>
             ))}
           </ul>
         </div>
       )}
-      {showNotification && (
-        <div className="notification active">
-          Товар додано до кошика!
+      {notification.show && (
+        <div className={`notification active ${getNotificationClass(notification.message)}`}>
+          {notification.message}
         </div>
       )}
     </>

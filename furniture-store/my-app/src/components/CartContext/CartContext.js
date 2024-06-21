@@ -4,6 +4,7 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [notification, setNotification] = useState({ show: false, message: '' });
 
   const addToCart = (product) => {
     const updatedCart = [...cart];
@@ -16,6 +17,9 @@ export const CartProvider = ({ children }) => {
     }
 
     setCart(updatedCart);
+    if (notification.message !== 'Товар додано до кошика!') {
+      setNotification({ show: true, message: 'Товар додано до кошика!' });
+    }
   };
 
   const updateCart = (updatedCart) => {
@@ -23,7 +27,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, updateCart }}>
+    <CartContext.Provider value={{ cart, addToCart, updateCart, notification, setNotification }}>
       {children}
     </CartContext.Provider>
   );
