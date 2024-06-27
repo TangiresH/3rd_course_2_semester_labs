@@ -52,6 +52,21 @@ const Cart = () => {
     return cart.reduce((total, item) => total + item.quantity, 0);
   };
 
+  const getTotalCost = () => {
+    const totalCost = cart.reduce((total, item) => {
+      const itemPrice = parseFloat(item.price);
+      const itemQuantity = parseInt(item.quantity); 
+      
+      if (!isNaN(itemPrice) && !isNaN(itemQuantity)) {
+        return total + (itemPrice * itemQuantity);
+      } else {
+        return total;
+      }
+    }, 0);
+  
+    return totalCost.toFixed(2);
+  };
+
   const getNotificationClass = (message) => {
     switch (message) {
       case 'Товар додано до кошика!':
@@ -90,6 +105,7 @@ const Cart = () => {
                 </span>
               </li>
             ))}
+            <li className="total-cost">Загальна вартість: {getTotalCost()} грн</li>
           </ul>
         </div>
       )}
