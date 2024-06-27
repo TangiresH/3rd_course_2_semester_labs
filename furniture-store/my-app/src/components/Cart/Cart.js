@@ -55,7 +55,7 @@ const Cart = () => {
   const getTotalCost = () => {
     const totalCost = cart.reduce((total, item) => {
       const itemPrice = parseFloat(item.price);
-      const itemQuantity = parseInt(item.quantity); 
+      const itemQuantity = parseInt(item.quantity);
       
       if (!isNaN(itemPrice) && !isNaN(itemQuantity)) {
         return total + (itemPrice * itemQuantity);
@@ -63,7 +63,7 @@ const Cart = () => {
         return total;
       }
     }, 0);
-  
+
     return totalCost.toFixed(2);
   };
 
@@ -78,6 +78,11 @@ const Cart = () => {
       default:
         return 'notification-default';
     }
+  };
+
+  const handleOrderClick = () => {
+    console.log('Замовлення здійснюється...');
+    // add a code to process the order
   };
 
   return (
@@ -95,17 +100,21 @@ const Cart = () => {
           <ul>
             {cart.map((item, index) => (
               <li key={index}>
+                <img src={`table-${item.id}.jpg`} alt={item.name} className="product-image" />
                 <span>{item.name}</span>
                 <span>{item.price}</span>
                 <span className="quantity-controls">
                   Кількість: {item.quantity}{' '}
-                  <button className="quantity-button" onClick={() => handleQuantityChange(index, 'increase')}>+</button>{' '}
-                  <button className="quantity-button" onClick={() => handleQuantityChange(index, 'decrease')}>-</button>{' '}
+                  <button className="addition-button" onClick={() => handleQuantityChange(index, 'increase')}>+</button>{' '}
+                  <button className="subtraction-button" onClick={() => handleQuantityChange(index, 'decrease')}>-</button>{' '}
                   <button className="remove-button" onClick={() => handleQuantityChange(index, 'remove')}>Видалити</button>
                 </span>
               </li>
             ))}
-            <li className="total-cost">Загальна вартість: {getTotalCost()} грн</li>
+            <li className="cart-summary">
+              <span className="total-cost">Загальна вартість: {getTotalCost()} грн</span>
+              <button className="order-button" onClick={handleOrderClick}>Замовити</button>
+            </li>
           </ul>
         </div>
       )}

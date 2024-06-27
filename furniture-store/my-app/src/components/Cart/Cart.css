@@ -2,13 +2,14 @@
   position: fixed;
   top: 80px;
   right: 20px;
-  width: 800px;
-  background-color: #f4ffe6;
+  width: 900px;
+  background-color: #ffffff;
   border: 1px solid #ccc;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  border-radius: 10px;
+  border-radius: 25px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
 }
 
 .cart h2 {
@@ -111,25 +112,10 @@
   align-items: center;
 }
 
-.quantity-button {
-  background-color: #007bff;
-  color: #fff;
-  width: 35px;
-  height: 35px;
-  font-size: 25px;
-  border-radius: 10px;
-  margin-left: 20px;
-  border: none;
-}
-
-.quantity-button:hover {
-  background-color: #0056b3;
-}
-
 .remove-button {
-  background-color: red;
-  color: #fff;
-  width: 85px;
+  background-color: #594832;
+  color: #edebd7;
+  width: 100px;
   height: 35px;
   font-size: 16px;
   border-radius: 10px;
@@ -138,8 +124,76 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
 }
 
 .remove-button:hover {
-  background-color: #991515;
+  background-color: #863f2b;
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.cart .product-image {
+  width: 120px;
+  height: auto;
+  border-radius: 20px;
+  border: 1px solid #4f4f4f;
+}
+
+.order-button {
+  padding: 10px 20px;
+  background-color: #F7FAB2;
+  color: #fef9f0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 180px;
+  height: 50px;
+  font-size: 20px;
+  color: #4f4f4f;
+  font-weight: bold;
+}
+
+.order-button:hover {
+  background-color: #f9d99b;
+}
+
+.addition-button {
+  background-color: #F2D7B6;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  border-radius: 10px;
+  margin-left: 20px;
+  border: none;
+  color: #4f4f4f;
+}
+
+.addition-button:hover {
+  background-color: #f5bb9e;
+}
+
+
+.subtraction-button {
+  background-color: #BFA07A;
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  border-radius: 10px;
+  margin-left: 20px;
+  border: none;
+  color: #4f4f4f;
+}
+
+.subtraction-button:hover {
+  background-color: #ce8b6a;
 }
