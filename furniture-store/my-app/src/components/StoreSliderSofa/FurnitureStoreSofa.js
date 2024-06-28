@@ -4,45 +4,12 @@ import './FurnitureStoreSofa.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import CartContext from '../CartContext/CartContext';
+import products from '../ProductsList/ProductsList';
 
 
 const FurnitureStoreSofa = () => {
   const { addToCart } = useContext(CartContext);
-
-  const products = [
-    {
-      id: 1,
-      name: 'Софа Лучіано Сірий',
-      description: 'Сучасний диван з елегантним дизайном, м\'якими сидінням і спинкою, лляною оббивкою та міцним дерев\'яним каркасом.',
-      price: '27510 ₴',
-      image: '/sofa-1.jpg',
-      type: 'sofa',
-    },
-    {
-      id: 2,
-      name: 'Софа Оскар Айворі',
-      description: 'Сучасний диван з лаконічним дизайном, м\'якими сидінням і спинкою, знімними подушками, меблевою оббивкою та міцним дерев\'яним каркасом на пластикових ніжках.',
-      price: '47250 ₴',
-      image: '/sofa-2.jpg',
-      type: 'sofa',
-    },
-    {
-      id: 3,
-      name: 'Софа Лучіано Чорнильно-синій',
-      description: 'Сучасний диван з елегантним дизайном, м\'якими сидінням і спинкою, лляною оббивкою та міцним дерев\'яним каркасом',
-      price: '27510 ₴',
-      image: '/sofa-3.jpg',
-      type: 'sofa',
-    },
-    {
-      id: 4,
-      name: 'Диван Weekend Austin 21 Black, Чорний',
-      description: 'Сучасне крісло з м\'яким сидінням, італійським текстилем, металевим каркасом і можливістю фарбування за RAL.',
-      price: '29500 ₴',
-      image: '/sofa-4.jpg',
-      type: 'sofa',
-    },
-  ];
+  const sofaProducts = products.filter(product => product.type === 'sofa');
 
   const settings = {
     dots: true,
@@ -74,7 +41,7 @@ const FurnitureStoreSofa = () => {
     <section id="furniture-store-sofa" className="page-section">
       <h2>Дивани</h2>
       <Slider {...settings}>
-        {products.map((product) => (
+        {sofaProducts.map((product) => (
           <div key={product.id} className="product-slide">
             <div className="product-card">
               <img src={product.image} alt={product.name} className="product-image" />
