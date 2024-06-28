@@ -10,21 +10,19 @@ import FurnitureStoreTable from './components/StoreSliderTable/FurnitureStoreTab
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './components/CartContext/CartContext';
 
-
 function App() {
   return (
     <div className="App">
       <Menu />
       <SearchBar />
       <Services />
-      <FurnitureStoreSofa />
-      <FurnitureStoreWardrobe />
-      <FurnitureStoreChairs />
       <CartProvider>
-        <FurnitureStoreTable />
         <Cart />
+        <FurnitureStoreSofa />
+        <FurnitureStoreWardrobe />
+        <FurnitureStoreChairs />
+        <FurnitureStoreTable />
       </CartProvider>
-      
       <section id="about" className="page-section">
         <h2>Акції</h2>
         <p>Інформація про акції.</p>

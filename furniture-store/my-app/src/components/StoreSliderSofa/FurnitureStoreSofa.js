@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Slider from 'react-slick';
 import './FurnitureStoreSofa.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import CartContext from '../CartContext/CartContext';
+
 
 const FurnitureStoreSofa = () => {
+  const { addToCart } = useContext(CartContext);
+
   const products = [
     {
       id: 1,
@@ -12,6 +16,7 @@ const FurnitureStoreSofa = () => {
       description: 'Сучасний диван з елегантним дизайном, м\'якими сидінням і спинкою, лляною оббивкою та міцним дерев\'яним каркасом.',
       price: '27510 ₴',
       image: '/sofa-1.jpg',
+      type: 'sofa',
     },
     {
       id: 2,
@@ -19,6 +24,7 @@ const FurnitureStoreSofa = () => {
       description: 'Сучасний диван з лаконічним дизайном, м\'якими сидінням і спинкою, знімними подушками, меблевою оббивкою та міцним дерев\'яним каркасом на пластикових ніжках.',
       price: '47250 ₴',
       image: '/sofa-2.jpg',
+      type: 'sofa',
     },
     {
       id: 3,
@@ -26,6 +32,7 @@ const FurnitureStoreSofa = () => {
       description: 'Сучасний диван з елегантним дизайном, м\'якими сидінням і спинкою, лляною оббивкою та міцним дерев\'яним каркасом',
       price: '27510 ₴',
       image: '/sofa-3.jpg',
+      type: 'sofa',
     },
     {
       id: 4,
@@ -33,6 +40,7 @@ const FurnitureStoreSofa = () => {
       description: 'Сучасне крісло з м\'яким сидінням, італійським текстилем, металевим каркасом і можливістю фарбування за RAL.',
       price: '29500 ₴',
       image: '/sofa-4.jpg',
+      type: 'sofa',
     },
   ];
 
@@ -75,7 +83,7 @@ const FurnitureStoreSofa = () => {
                 <p>{product.description}</p>
                 <div className="product-footer">
                   <p className="product-price">{product.price}</p>
-                  <button className="add-to-cart-button">+</button>
+                  <button className="add-to-cart-button" onClick={() => addToCart(product)}>+</button>
                 </div>
               </div>
             </div>

@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Slider from 'react-slick';
 import './FurnitureStoreChairs.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import CartContext from '../CartContext/CartContext';
+
 
 const FurnitureStoreChairs = () => {
+  const { addToCart } = useContext(CartContext);
+
   const products = [
     {
         id: 1,
@@ -12,6 +16,7 @@ const FurnitureStoreChairs = () => {
         description: 'Стильне крісло з трендовим дизайном, зручним сидінням та м\'якою оббивкою зі штучного хутра, що стане окрасою Вашого інтер\'єру.',
         price: '11078 ₴',
         image: '/chair-1.jpg',
+        type: 'chair',
     },
     {
         id: 2,
@@ -19,6 +24,7 @@ const FurnitureStoreChairs = () => {
         description: 'Затишне крісло з актуальним дизайном, м\'яким сидінням та приємною на дотик велюровою оббивкою, що стане чудовим доповненням Вашого інтер\'єру.',
         price: '3499 ₴',
         image: '/chair-2.jpg',
+        type: 'chair',
     },
     {
         id: 3,
@@ -26,6 +32,7 @@ const FurnitureStoreChairs = () => {
         description: 'Стильне та практичне крісло з комфортним сидінням, різними варіантами оббивки та зручними підлокітниками, що чудово доповнить інтер\'єр Вашої вітальні.',
         price: '2484 ₴',
         image: '/chair-3.jpg',
+        type: 'chair',
     },
     {
         id: 4,
@@ -33,6 +40,7 @@ const FurnitureStoreChairs = () => {
         description: 'Оригінальне крісло з незвичайним дизайном, комфортним сидінням та якісною оббивкою, що стане окрасою Вашого інтер\'єру.',
         price: '1887 ₴',
         image: '/chair-4.jpg',
+        type: 'chair',
     },
     {
         id: 5,
@@ -40,6 +48,7 @@ const FurnitureStoreChairs = () => {
         description: 'Сучасне крісло з комфортним сидінням, оббивкою з букле та елегантними чорними ніжками, що стане стильним доповненням Вашого інтер\'єру.',
         price: '3990 ₴',
         image: '/chair-5.jpg',
+        type: 'chair',
     },
     {
         id: 6,
@@ -47,6 +56,7 @@ const FurnitureStoreChairs = () => {
         description: 'М\'які та стильні стільці для Вашого комфорту та затишку в будь-якому інтер\'єрі.',
         price: '3150 ₴',
         image: '/chair-6.jpg',
+        type: 'chair',
     },
   ];
 
@@ -89,7 +99,7 @@ const FurnitureStoreChairs = () => {
                 <p>{product.description}</p>
                 <div className="product-footer">
                   <p className="product-price">{product.price}</p>
-                  <button className="add-to-cart-button">+</button>
+                  <button className="add-to-cart-button" onClick={() => addToCart(product)}>+</button>
                 </div>
               </div>
             </div>

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Slider from 'react-slick';
 import './FurnitureStoreWardrobe.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import CartContext from '../CartContext/CartContext';
 
 const FurnitureStoreWardrobe = () => {
+  const { addToCart } = useContext(CartContext);
+
   const products = [
     {
         id: 1,
@@ -12,6 +15,7 @@ const FurnitureStoreWardrobe = () => {
         description: 'Універсальні відтінки підходять під будь-який інтер\'єр. Корпус з ламінованої ДСП 16 мм, фасад із трьохшаровим глянцевим покриттям. З\'єднання деталей ексцентриковою стяжкою (MINIFIX).',
         price: '15114 ₴',
         image: '/wardrobe-1.jpg',
+        type: 'wardrobe',
     },
     {
         id: 2,
@@ -19,6 +23,7 @@ const FurnitureStoreWardrobe = () => {
         description: 'мінімалістичний дизайн, білі глянцеві фасади, корпус з ламінованої ДСП 16 мм під благородне дерево. Трьохшарове глянцеве покриття фасаду, висушене УФ-променями. З\'єднання ексцентриковою стяжкою (MINIFIX).',
         price: '11973 ₴',
         image: '/wardrobe-2.jpg',
+        type: 'wardrobe',
     },
     {
         id: 3,
@@ -26,6 +31,7 @@ const FurnitureStoreWardrobe = () => {
         description: 'Стильна шафа в сучасному стилі з металевою основою. Дві дверцяти, штанга для одягу, дві полиці. Корпус з ламінованої ДСП, чорні пластикові ручки. Доступна в 5 кольорах.',
         price: '6126 ₴',
         image: '/wardrobe-3.jpg',
+        type: 'wardrobe',
     },
     {
         id: 4,
@@ -33,6 +39,7 @@ const FurnitureStoreWardrobe = () => {
         description: 'Шафа з ексклюзивним дизайном у приємних відтінках. Матове покриття, стійке і легке в догляді. Корпус із ламінованої ДСП 16 мм. Фасад із трьохшаровим глянцевим покриттям, висушеним УФ-променями.',
         price: '17826 ₴',
         image: '/wardrobe-4.jpg',
+        type: 'wardrobe',
     },
     {
         id: 5,
@@ -40,6 +47,7 @@ const FurnitureStoreWardrobe = () => {
         description: 'Стильна шафа в сучасному стилі з металевою основою. Дві дверцяти, штанга для одягу, дві полиці. Корпус з ламінованої ДСП, чорні пластикові ручки. Доступна в 5 кольорах.',
         price: '15512 ₴',
         image: '/wardrobe-5.jpg',
+        type: 'wardrobe',
     },
     {
         id: 6,
@@ -47,6 +55,7 @@ const FurnitureStoreWardrobe = () => {
         description: 'Шафа в стилі лофт з міцним корпусом і фасадом з ламінованої ДСП (16 мм). Темний відтінок дерева Дуб Фрегат, чорна алюмінієва ручка. Надійна конструкція з дзеркалами на центральній частині фасаду.',
         price: '13514 ₴',
         image: '/wardrobe-6.jpg',
+        type: 'wardrobe',
     },
   ];
 
@@ -89,7 +98,7 @@ const FurnitureStoreWardrobe = () => {
                 <p>{product.description}</p>
                 <div className="product-footer">
                   <p className="product-price">{product.price}</p>
-                  <button className="add-to-cart-button">+</button>
+                  <button className="add-to-cart-button" onClick={() => addToCart(product)}>+</button>
                 </div>
               </div>
             </div>
