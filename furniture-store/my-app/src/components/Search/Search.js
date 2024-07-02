@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { searchProducts } from '../API/searchProducts';
 import './Search.css';
 
 const SearchBar = () => {
   const [query, setQuery] = useState('');
-  const [products, setProducts] = useState([]);
-
-  const searchProducts = async (query) => {
-    if (!query.trim()) return; // Запобігання виконанню пошуку для порожніх запитів
-    const response = await fetch(`/api/search?q=${query}`);
-    const data = await response.json();
-    setProducts(data.products);
-  };
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   const handleInputChange = (e) => {
     const query = e.target.value;
     setQuery(query);
   };
 
-  const handleSearchClick = () => {
-    searchProducts(query);
-  };
+  useEffect(() => {
+    if (query.length > 0) {
+      const results = searchProducts(query);
+      setFilteredProducts(results);
+    } else {
+      setFilteredProducts([]);
+    }
+  }, [query]);
 
-  const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      searchProducts(query);
+  const handleProductClick = (product) => {
+    const productSection = document.getElementById(product.type);
+    if (productSection) {
+      productSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -40,24 +40,25 @@ const SearchBar = () => {
           placeholder="Пошук меблів..."
           value={query}
           onChange={handleInputChange}
-          onKeyDown={handleKeyDown}
         />
-        <button
-          id="search-button"
-          onClick={handleSearchClick}
-        >
-        <img src="/image-search.png" alt="Search" className="search-icon" />
+        <button id="search-button">
+          <img src="/image-search.png" alt="Search" className="search-icon" />
         </button>
       </div>
-      <div id="product-list">
-        {products.map((product) => (
-          <div key={product.id} className="product-item">
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <p>{product.price}</p>
-          </div>
-        ))}
-      </div>
+      {filteredProducts.length > 0 && (
+        <div id="product-list">
+          {filteredProducts.map((product) => (
+            <div key={product.id} className="product-item" onClick={() => handleProductClick(product)}>
+              <img src={product.image} alt={product.name} className="product-image" />
+              <div className="product-info">
+                <h3 className="product-name">{product.name}</h3>
+                <p className="product-description">{product.description}</p>
+                <p className="product-price">{product.price}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 };
