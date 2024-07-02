@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { searchProducts } from '../API/searchProducts';
 import './Search.css';
+import CartContext from '../CartContext/CartContext';
 
 const SearchBar = () => {
   const [query, setQuery] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const { addToCart } = useContext(CartContext);
 
   const handleInputChange = (e) => {
     const query = e.target.value;
@@ -25,6 +27,10 @@ const SearchBar = () => {
     if (productSection) {
       productSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
   };
 
   return (
@@ -55,6 +61,7 @@ const SearchBar = () => {
                 <p className="product-description">{product.description}</p>
                 <p className="product-price">{product.price}</p>
               </div>
+              <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>+</button>
             </div>
           ))}
         </div>

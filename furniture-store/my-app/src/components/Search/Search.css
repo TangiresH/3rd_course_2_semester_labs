@@ -63,13 +63,15 @@
 }
 
 #product-list {
-  max-height: 350px;
+  max-height: 550px;
   overflow-y: auto;
   border: 1px solid #ccc;
   border-radius: 10px;
   margin-top: 20px;
   padding: 10px;
   background-color: #fff;
+  width: 900px;
+  margin: 50px auto;
 }
 
 .product-item {
@@ -79,6 +81,8 @@
   padding: 10px;
   border-radius: 10px;
   transition: background-color 0.3s ease;
+  height: 120px;
+  width: auto;
 }
 
 .product-item:hover {
@@ -86,8 +90,8 @@
 }
 
 .product-image {
-  width: 120px;
-  height: auto;
+  width: auto !important;
+  height: 130px !important;
   border-radius: 10px;
   margin-right: 10px;
 }

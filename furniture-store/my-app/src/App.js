@@ -14,10 +14,10 @@ function App() {
   return (
     <div className="App">
       <Menu />
-      <SearchBar />
-      <Services />
       <CartProvider>
         <Cart />
+        <SearchBar />
+        <Services />
         <FurnitureStoreSofa />
         <FurnitureStoreWardrobe />
         <FurnitureStoreChairs />
