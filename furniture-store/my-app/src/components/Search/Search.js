@@ -55,11 +55,11 @@ const SearchBar = () => {
         <div id="product-list">
           {filteredProducts.map((product) => (
             <div key={product.id} className="product-item" onClick={() => handleProductClick(product)}>
-              <img src={product.image} alt={product.name} className="product-image" />
-              <div className="product-info">
-                <h3 className="product-name">{product.name}</h3>
-                <p className="product-description">{product.description}</p>
-                <p className="product-price">{product.price}</p>
+              <img src={product.image} alt={product.name} className="product-image-input" />
+              <div className="product-info-input">
+                <h3 className="product-name-input">{product.name}</h3>
+                <p className="product-description-input">{product.description}</p>
+                <p className="product-price-input">{product.price}</p>
               </div>
               <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>+</button>
             </div>
