@@ -61,7 +61,7 @@ const SearchBar = () => {
                 <p className="product-description-input">{product.description}</p>
                 <p className="product-price-input">{product.price}</p>
               </div>
-              <button className="add-to-cart-button" onClick={() => handleAddToCart(product)}>+</button>
+              <button className="add-to-cart-button-input" onClick={() => handleAddToCart(product)}>+</button>
             </div>
           ))}
         </div>

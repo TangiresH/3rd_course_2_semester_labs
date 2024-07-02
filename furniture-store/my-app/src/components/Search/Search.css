@@ -128,3 +128,23 @@
   color: #f3f2f0;
   font-weight: bold;
 }
+
+.add-to-cart-button-input {
+  background-color: #d73e38;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.add-to-cart-button-input:hover {
+  background-color: #f22521;
+}
+
