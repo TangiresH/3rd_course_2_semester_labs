@@ -18,26 +18,31 @@
     display: flex;
     justify-content: center;
   }
-  
-  .menu-list.open {
-    display: block;
-  }
+
   
   .menu-item {
     margin: 10px 0;
     position: relative;
-    border: 1px solid #ccc0cc;
+    border: 2px solid #ae8d62;
     font-size: 34px;
     border-radius: 15px;
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-    background-color: #DCE1DD;
+    background-color: #594832;
     transition: background-color 0.3s ease, padding-left 0.5s ease, padding-right 0.5s ease;
 }
 
+.menu-item a {
+  color: #edebd7 !important;
+}
+
+.menu-item a:hover {
+  color: #594832 !important;
+}
+
 .menu-item:hover {
-    background-color: #E3DBC8;
+    background-color: #f2d7b6;
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -65,13 +70,29 @@
   }
   
   .submenu-item {
-    margin: 5px 0;
+    width: 120px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #594832;
+    transition: background-color 0.3s ease, padding-left 0.5s ease, padding-right 0.5s ease;
+    border: 2px solid #ae8d62;
+    margin-bottom: 3px;
+  }
+
+  .submenu-item:hover {
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #f2d7b6;
   }
   
   .submenu-item a {
     text-decoration: none;
-    color: #000;
+    color: #edebd7;
     font-size: 16px;
+  }
+
+  .submenu-item a:hover {
+    color: #594832;
   }
   
   @media (min-width: 768px) {
@@ -88,19 +109,13 @@
       margin: 0;
     }
   
-    .submenu-list {
-      position: absolute;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: none;
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-  
     .menu-item:hover .submenu-list {
         display: flex;
-        flex-direction: column; /* Відображаємо підменю як колонку */
-      
+        flex-direction: column; 
     }
   }
+
+  .menu-list.open {
+    display: block;
+}
   
