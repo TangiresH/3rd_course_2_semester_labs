@@ -9,6 +9,7 @@ import FurnitureStoreChairs from './components/StoreSliderChairs/FurnitureStoreC
 import FurnitureStoreTable from './components/StoreSliderTable/FurnitureStoreTable';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './components/CartContext/CartContext';
+import Footer from './components/FooterNavigation/Footer';
 
 function App() {
   return (
@@ -27,10 +28,7 @@ function App() {
         <h2>Акції</h2>
         <p>Інформація про акції.</p>
       </section>
-      <section id="contact" className="page-section">
-        <h2>Контактна інформація</h2>
-        <p>Як з нами зв'язатися.</p>
-      </section>
+      <Footer />
     </div>
   );
 }
