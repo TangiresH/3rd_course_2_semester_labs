@@ -100,7 +100,7 @@ const Cart = () => {
           <ul>
             {cart.map((item, index) => (
               <li key={index}>
-                <img src={`${item.type}-${item.id}.jpg`} alt={item.name} className="product-image" />
+                <img src={item.image} alt={item.name} className="product-image" />
                 <span>{item.name}</span>
                 <span>{item.price}</span>
                 <span className="quantity-controls">

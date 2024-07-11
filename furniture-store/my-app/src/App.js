@@ -24,10 +24,6 @@ function App() {
         <FurnitureStoreChairs />
         <FurnitureStoreTable />
       </CartProvider>
-      <section id="about" className="page-section">
-        <h2>Акції</h2>
-        <p>Інформація про акції.</p>
-      </section>
       <Footer />
     </div>
   );
